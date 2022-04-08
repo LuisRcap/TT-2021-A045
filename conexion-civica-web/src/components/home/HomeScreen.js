@@ -22,7 +22,10 @@ const HomeScreen = () => {
           tabIndex="0">
         </iframe>
 
-        <FormNuevoReporte/>
+        {
+          showMenu && <FormNuevoReporte/>
+        }
+        
         
 
         <button
