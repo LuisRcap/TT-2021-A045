@@ -1,0 +1,31 @@
+iframe {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+button#show {
+    font-size: 45px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: fixed;
+    border: 2px solid #ccc;
+    right: 16.5vw;
+    bottom: 7vh;
+    width: 70px;
+    height: 70px;
+}
+
+.signin-icon {
+    border: 2px solid $secondary;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    position: absolute;
+    right: 5vw;
+    top: 5vh;
+    width: 70px;
+}

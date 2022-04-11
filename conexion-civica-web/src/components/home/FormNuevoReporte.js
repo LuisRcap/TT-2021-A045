@@ -10,7 +10,6 @@ const FormNuevoReporte = () => {
         <select className='mt-2 rounded'>
             <option disabled selected>Tipo</option>
         </select>
-        <div className='pico'></div>
     </form>
   )
 }
