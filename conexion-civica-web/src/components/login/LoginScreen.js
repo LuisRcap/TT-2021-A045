@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+/* import { useDispatch, useSelector } from 'react-redux'; */
 import { useForm } from '../../hooks/useForm';
 
 
@@ -64,7 +64,7 @@ const LoginScreen = () => {
         </div>
 
         <Link 
-          to="/register"
+          to="/auth/register"
           className='link'
         >
           Crear nueva cuenta

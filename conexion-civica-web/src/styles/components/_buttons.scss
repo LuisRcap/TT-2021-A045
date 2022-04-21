@@ -1,3 +1,38 @@
+.btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 7px 10px 7px 10px;
+    transition: color .3s ease;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        color: darken($color: $white, $amount: 10);
+    }
+    
+}
+
+.btn-primary {
+    background-color: $buttons;
+    border-radius: 2px;
+
+    &:disabled {
+        background-color: lighten($color: $buttons, $amount: 15);
+    }
+    &:hover {
+        background-color: darken($color: $buttons, $amount: 10);
+    }
+}
+
+.btn-block {
+    width: 100%;
+}
+
 .google-btn {
     cursor: pointer;
     margin-top: 5px;
