@@ -1,23 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-/* import { useDispatch, useSelector } from 'react-redux'; */
+import { useDispatch } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
+import { startLoginEmailPassword, startGoogleLogin } from '../../actions/auth';
 
 
 const LoginScreen = () => {
 
-  const  { values, handleInputChange } = useForm({
+  const dispatch = useDispatch();
+
+  const [loading, setLoading] = useState(false);
+
+  const [values, handleInputChange]  = useForm({
     email: '',
     password: ''
   });
 
+
   const { email, password } = values;
+
+  const handleLoading = ( state ) => {
+    setLoading( state );
+  }
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    
+    dispatch( startLoginEmailPassword( email, password, handleLoading ) );
+  }
+
+  const handleGoogleLogin = (e) => {
+    e.preventDefault();
+    dispatch( startGoogleLogin( handleLoading ) );
+  }
+
 
   return (
     <>
       <h3 className='auth__title'>Iniciar Sesión</h3>
 
-      <form /* onSubmit={ handleLogin } */>
+      <form onSubmit={ handleLogin }>
 
         <input
           type='text' 
@@ -41,7 +63,7 @@ const LoginScreen = () => {
         <button
           type='submit'
           className='btn btn-primary btn-block'
-          /* disabled={ loading } */
+          disabled={ loading }
         >
           Iniciar Sesión
         </button>
@@ -51,7 +73,7 @@ const LoginScreen = () => {
 
           <div 
             className="google-btn"
-            /* onClick={ handleGoogleLogin } */
+            onClick={ handleGoogleLogin }
           >
             <div className="google-icon-wrapper">
               <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
