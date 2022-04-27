@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
 import FormNuevoReporte from './FormNuevoReporte';
+import NavUser from './NavUser';
 
 const HomeScreen = () => {
 
@@ -26,25 +26,35 @@ const HomeScreen = () => {
         {
           showMenu && <FormNuevoReporte/>
         }
-        
-        <Link to={'/auth/login'} className='signin-icon'>
-          <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-user-plus" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#003B36" fill="none" strokeLinecap="round" strokeLinejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <circle cx="9" cy="7" r="4" />
-            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-            <path d="M16 11h6m-3 -3v6" />
-          </svg>
-        </Link>
 
+        {/* Menú desplegable para el ícono de usuario */}
+
+        <NavUser />
 
         <button
           id="show"
           className='bg-light'
           onClick={handleShowForm}
         >
+          {/* Si se muestra el form es un icono de menos de lo contrario es un archivo con signo más */}
           <p>
             {
-              !showMenu ? '+' : '-'
+              !showMenu ?
+                (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-file-plus" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#003B36" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                    <line x1="12" y1="11" x2="12" y2="17" />
+                    <line x1="9" y1="14" x2="15" y2="14" />
+                  </svg>
+                ) :
+                (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-minus" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#003B36" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                )
             }
           </p>
         </button>
