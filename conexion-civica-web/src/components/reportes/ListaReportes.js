@@ -1,3 +1,5 @@
+// Visualizacion de todos los reportes
+
 import React from 'react';
 
 const ListaReportes = () => {
@@ -6,4 +8,4 @@ const ListaReportes = () => {
   )
 }
 
-export default ListaReportes;
+export default ListaReportes; 
