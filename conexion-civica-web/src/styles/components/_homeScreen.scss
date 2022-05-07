@@ -29,3 +29,17 @@ button#show {
     top: 5vh;
     width: 70px;
 }
+
+.signin-menu {
+    border: 2px solid $secondary;
+    background-color: blue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    position: absolute;
+    left: 5vw;
+    top: 5vh;
+    width: 70px;
+}
