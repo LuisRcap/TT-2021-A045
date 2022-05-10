@@ -24,7 +24,7 @@ const AppRouter = () => {
     
     firebase.auth().onAuthStateChanged(user => {
       if( user?.uid ) {
-        dispatch( login( user.id, user.displayName ) );
+        dispatch( login( user.uid, user.displayName ) );
         setIsLoggedIn(true);
       } else {
         setIsLoggedIn( false );

@@ -9,14 +9,14 @@ button#show {
     font-weight: bold;
     border-radius: 50%;
     position: fixed;
-    border: 2px solid #ccc;
+    border: 2px solid $secondary;
     right: 16.5vw;
     bottom: 7vh;
     width: 70px;
     height: 70px;
 }
 
-.signin-icon {
+.user-icon {
     border: 2px solid $secondary;
     background-color: white;
     border-radius: 50%;
@@ -24,8 +24,10 @@ button#show {
     justify-content: center;
     align-items: center;
     height: 70px;
+    padding: 5px;
     position: absolute;
     right: 5vw;
     top: 5vh;
     width: 70px;
+    cursor: pointer;
 }
