@@ -3,6 +3,7 @@ import FormNuevoReporte from './FormNuevoReporte';
 import { Link } from 'react-router-dom';
 import Menu  from './Menu';
 import NavUser from './NavUser';
+import { Busqueda } from './Busqueda';
 
 const HomeScreen = () => {
 
@@ -12,14 +13,19 @@ const HomeScreen = () => {
     setShowMenu( !showMenu )
   }
 
-  const [Menuu, setMenu] = useState(false);
+  const [Sidebar, setMenu] = useState(false);
 
   const handleShowMenu = () => {
-    setMenu( !Menuu )
+    setMenu( !Sidebar )
   }
+
+  
 
   return (
     <div>
+        
+        <Busqueda/>
+
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30101.028264427783!2d-99.13357705313935!3d19.42844956073063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92b75aa014d%3A0x17d810d20da6e8cf!2sPalacio%20de%20Bellas%20Artes!5e0!3m2!1ses-419!2smx!4v1596420530063!5m2!1ses-419!2smx"
           id="mapa"
@@ -36,7 +42,7 @@ const HomeScreen = () => {
         }
 
         {
-          Menuu && <Menu/>
+          Sidebar && <Menu/>
         }
         
         <Link to={'/auth/login'} className='signin-icon'>
@@ -53,12 +59,31 @@ const HomeScreen = () => {
           className='signin-menu'
           onClick={handleShowMenu}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <line x1="4" y1="6" x2="20" y2="6" />
-          <line x1="4" y1="12" x2="20" y2="12" />
-          <line x1="4" y1="18" x2="20" y2="18" />
-          </svg>
+          {
+            !Sidebar ? 
+            (
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <line x1="4" y1="6" x2="20" y2="6" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="18" x2="20" y2="18" />
+              </svg>
+            ) : 
+            (
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-minimize" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <polyline points="5 9 9 9 9 5" />
+              <line x1="3" y1="3" x2="9" y2="9" />
+              <polyline points="5 15 9 15 9 19" />
+              <line x1="3" y1="21" x2="9" y2="15" />
+              <polyline points="19 9 15 9 15 5" />
+              <line x1="15" y1="9" x2="21" y2="3" />
+              <polyline points="19 15 15 15 15 19" />
+              <line x1="15" y1="15" x2="21" y2="21" />
+            </svg>
+            )
+
+          }
         </button>
         
 

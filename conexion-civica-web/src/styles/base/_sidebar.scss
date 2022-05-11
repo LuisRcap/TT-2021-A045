@@ -7,7 +7,7 @@
   .sidebar-nav {
       position: absolute;
       top: 8rem;
-      width: 230px;
+      width: 245px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -19,6 +19,9 @@
       line-height: 30px;
       display: inline-block;
       width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 20px;
   }
   
   .sidebar-nav li:before {
@@ -53,10 +56,10 @@
   }
   
   .sidebar-nav li a {
-      display: block;
       color: #ddd;
       text-decoration: none;
-      padding: 10px 15px 10px 30px;    
+      padding: 10px 15px 10px 30px;
+      font-size: large;    
   }
   
   .sidebar-nav li a:hover,
@@ -110,54 +113,6 @@
   .dropdown-menu.show {
       top: 0;
   }
-  /*Fontawesome icons*/
-  .nav.sidebar-nav li a::before {
-      font-family: fontawesome;
-      content: "\f12e";
-      vertical-align: baseline;
-      display: inline-block;
-      padding-right: 5px;
-  }
-  a[href*="#home"]::before {
-    content: "\f015" !important;
-  }
-  a[href*="#about"]::before {
-    content: "\f129" !important;
-  }
-  a[href*="#events"]::before {
-    content: "\f073" !important;
-  }
-  a[href*="#events"]::before {
-    content: "\f073" !important;
-  }
-  a[href*="#team"]::before {
-    content: "\f0c0" !important;
-  }
-  a[href*="#works"]::before {
-    content: "\f0b1" !important;
-  }
-  a[href*="#pictures"]::before {
-    content: "\f03e" !important;
-  }
-  a[href*="#videos"]::before {
-    content: "\f03d" !important;
-  }
-  a[href*="#books"]::before {
-    content: "\f02d" !important;
-  }
-  a[href*="#art"]::before {
-    content: "\f1fc" !important;
-  }
-  a[href*="#awards"]::before {
-    content: "\f02e" !important;
-  }
-  a[href*="#services"]::before {
-    content: "\f013" !important;
-  }
-  a[href*="#contact"]::before {
-    content: "\f086" !important;
-  }
-  a[href*="#followme"]::before {
-    content: "\f099" !important;
-    color: #0084b4;
-  }
+
+
+
