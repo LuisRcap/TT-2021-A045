@@ -1,9 +1,10 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import { credentials } from '../../credentials/credentials';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCYserX1vZz8elKG1rrxtauOvpbhJqjzkE",
+    apiKey: credentials.firebase,
     authDomain: "conexion-civica.firebaseapp.com",
     projectId: "conexion-civica",
     storageBucket: "conexion-civica.appspot.com",
