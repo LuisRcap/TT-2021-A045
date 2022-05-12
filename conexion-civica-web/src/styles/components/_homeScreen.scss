@@ -31,3 +31,34 @@ button#show {
     width: 70px;
     cursor: pointer;
 }
+
+.signin-menu {
+    border: 2px solid $secondary;
+    background-color: #63b9a8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    position: absolute;
+    left: 5vw;
+    top: 5vh;
+    width: 70px;
+}
+
+.nav_buscar{
+    background-color: rgba(0,0,0,0.25);
+    padding-top: 10px;
+}
+
+.titulo {
+    margin-left: 100px;
+}
+
+.buscar {
+    display: flex;
+    width: 50%;
+    height: 43px;
+    margin-right: 200px;
+    padding-bottom: 3px;
+}

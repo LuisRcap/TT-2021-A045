@@ -42,7 +42,7 @@ const NavUser = () => {
                 </svg>
 
                 { navState && (
-                    <nav>
+                    <nav className='nav-session'>
                         { console.log(navState) }
                         <Link 
                             className='nav-link'
@@ -93,7 +93,7 @@ const NavUser = () => {
                 </svg>  
 
                 { navState && (
-                    <nav>
+                    <nav className='nav-session'>
                         <Link
                             className='nav-link'
                             to={'/auth/login'}
