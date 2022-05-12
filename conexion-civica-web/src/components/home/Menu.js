@@ -51,7 +51,7 @@ const Menu = () => {
             <circle cx="16.5" cy="17.5" r="2.5" />
             <path d="M18.5 19.5l2.5 2.5" />
           </svg>
-          <a href="#misReportes">Mis Reportes</a>
+          <a href="/user/misReportes">Mis Reportes</a>
         </li>
         <li>
           <svg
