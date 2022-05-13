@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import { credentials } from '../../credentials/credentials';
 
 const MapGoogle = () => {
+
+  const [coords, setCoords] = useState({})
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition( position => {
+      setCoords( position.coords )
+  
+    });
+  }, [navigator.geolocation]);
+  
+  const { latitude, longitude } = coords;
+  
+
 
   return (
     <LoadScript
@@ -10,7 +23,7 @@ const MapGoogle = () => {
     >
       <GoogleMap
         id='mapa'
-        center={{ lat: 19.43215370522607, lng: -99.13341467431162 }}
+        center={{ lat: latitude, lng: longitude }}
         zoom={ 14 }
       >
 
