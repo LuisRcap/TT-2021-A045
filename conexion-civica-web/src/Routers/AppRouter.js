@@ -12,6 +12,7 @@ import { login } from '../actions/auth';
 import PublicRoutes from './PublicRoutes';
 import PrivateRoutes from './PrivateRoutes';
 import UserRoutes from './UserRoutes';
+import ayuda  from '../components/ayuda/ayuda';
 
 const AppRouter = () => {
 
@@ -61,6 +62,7 @@ const AppRouter = () => {
               }
             />
             <Route path="/*" element={ <HomeScreen /> } />
+            <Route path='/'  element={ <ayuda/>} />
         </Routes>
     </Router>
   )

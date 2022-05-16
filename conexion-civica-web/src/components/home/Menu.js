@@ -95,7 +95,7 @@ const Menu = () => {
             <line x1="12" y1="8" x2="12" y2="11" />
             <line x1="12" y1="14" x2="12" y2="14.01" />
           </svg>
-          <a href="#ayuda">Ayuda</a>
+          <a href="/ayuda">Ayuda</a>
         </li>
         <li>
           <svg
