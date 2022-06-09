@@ -9,7 +9,7 @@ const MisReportesScreen = () => {
       <nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <div class="container-md justify-content-center">
           <a class="navbar-brand" href="#">
-            <h2>Estadisticas </h2>
+            <h2>Mis Reportes </h2>
           </a>
         </div>
       </nav>
