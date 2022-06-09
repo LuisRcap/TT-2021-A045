@@ -75,7 +75,7 @@ const Menu = () => {
             <path d="M12 16v4" />
             <path d="M9 20h6" />
           </svg>
-          <a href="#estadisticas">Estadisticas</a>
+          <a href="/estadisticas">Estadisticas</a>
         </li>
         <li>
           <svg

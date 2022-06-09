@@ -84,6 +84,10 @@ const LoginScreen = () => {
         <Link to="/auth/register" className="link">
           Crear nueva cuenta
         </Link>
+        <br></br>
+        <Link to="/auth/register" className="link">
+          Olvido su Contraseña?
+        </Link>
       </form>
     </>
   );

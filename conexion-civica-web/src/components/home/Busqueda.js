@@ -4,7 +4,7 @@ export const Busqueda = () => {
   return (
     <>
       <nav class="navbar navbar-light justify-content-between nav_buscar">
-        <div className="container">
+        <div className="container justify-content-center">
           <a class="navbar-brand titulo">
             <h1>Conexion Civica</h1>
           </a>
@@ -21,7 +21,7 @@ export const Busqueda = () => {
                 class="icon icon-tabler icon-tabler-map-search"
                 width="44"
                 height="44"
-                viewBox="0 0 24 24"
+                viewBox="0 2 24 30"
                 stroke-width="1.5"
                 stroke="#2c3e50"
                 fill="none"
