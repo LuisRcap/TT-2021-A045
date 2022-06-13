@@ -5,8 +5,6 @@ import './styles/styles.scss';
 import 'animate.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ConexionCivicaApp />
-  </React.StrictMode>,
+  <ConexionCivicaApp />,
   document.getElementById('root')
 );
