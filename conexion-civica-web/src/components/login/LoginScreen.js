@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm } from "../../hooks/useForm";
-import { startLoginEmailPassword, startGoogleLogin } from "../../actions/auth";
+import { startLoginEmailPassword, startGoogleLogin } from "../../store/auth/thunks";
 
 const LoginScreen = () => {
   const dispatch = useDispatch();

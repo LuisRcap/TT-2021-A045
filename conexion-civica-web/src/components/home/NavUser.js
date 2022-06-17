@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { startLogout } from '../../actions/auth';
+import { startLogout } from '../../store/auth/authSlices';
+
 
 const NavUser = () => {
 
@@ -9,7 +10,7 @@ const NavUser = () => {
     const dispatch = useDispatch();
 
     const { uid } = useSelector( state => state.auth );
-
+    console.log(uid);
     const handleNav = () => {
         setNavState(!navState);
         console.log(navState);

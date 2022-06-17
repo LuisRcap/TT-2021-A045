@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import validator from 'validator';
-import { startRegisterWithEmailPasswordName } from '../../actions/auth';
-import { removeError, setError } from '../../actions/ui';
+import { startRegisterWithEmailPasswordName } from '../../store/auth/thunks';
+import { removeError, setError } from '../../store/ui/uiSlices';
 import { useForm } from '../../hooks/useForm';
 
 export const RegisterScreen = () => {
@@ -33,13 +33,13 @@ export const RegisterScreen = () => {
   const isFormValid = () => {
     
     if( name.trim().length === 0 ){
-      dispatch( setError( 'El nombre es obligatorio' ) );
+      dispatch( setError({ err: 'El nombre es obligatorio' }) );
       return false;
     } else if( !validator.isEmail( email ) ) {
-      dispatch( setError( 'El email es inválido' ) );
+      dispatch( setError({ err: 'El email es inválido' }) );
       return false;
     } else if( password !== password2 || password.length < 5 ) {
-      dispatch( setError( 'Las contraseñas no coinciden o son inválidas' ) );
+      dispatch( setError({ err: 'Las contraseñas no coinciden o son inválidas' }));
       return false;
     }
 

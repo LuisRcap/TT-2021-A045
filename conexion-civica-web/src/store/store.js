@@ -1,17 +1,11 @@
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk'
+import { configureStore } from '@reduxjs/toolkit';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { authReducer } from '../reducers/authReducer';
-import { uiReducer } from '../reducers/uiReducer';
+import { authSlice } from './auth/authSlices';
+import { uiSlice } from './ui/uiSlices';
 
-const reducers = combineReducers({
-    auth: authReducer,
-    ui: uiReducer
+export const store = configureStore({
+    reducer: {
+        auth: authSlice.reducer,
+        ui: uiSlice.reducer
+    }
 })
-
-export const store = createStore(
-    reducers,
-    composeWithDevTools(
-        applyMiddleware(thunk)
-    )
-);

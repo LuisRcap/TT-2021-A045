@@ -1,4 +1,4 @@
-::-webkit-scrollbar {
+#mapa ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
@@ -12,7 +12,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     max-height: 100vh;
-    overflow: hidden;
 }
 
 #form-reporte-nuevo {

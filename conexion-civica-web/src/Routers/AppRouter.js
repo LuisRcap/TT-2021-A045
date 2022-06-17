@@ -8,7 +8,7 @@ import { firebase } from '../components/firebase/firebaseConfig';
 import { useDispatch } from 'react-redux';
 import HomeScreen from '../components/home/HomeScreen';
 import AuthRouter from './AuthRouter';
-import { login } from '../actions/auth';
+import { startLogin } from '../store/auth/authSlices';
 import PublicRoutes from './PublicRoutes';
 import PrivateRoutes from './PrivateRoutes';
 import UserRoutes from './UserRoutes';
@@ -25,7 +25,7 @@ const AppRouter = () => {
     
     firebase.auth().onAuthStateChanged(user => {
       if( user?.uid ) {
-        dispatch( login( user.uid, user.displayName ) );
+        dispatch( startLogin({ uid: user.uid, displayName: user.displayName }));
         setIsLoggedIn(true);
       } else {
         setIsLoggedIn( false );
