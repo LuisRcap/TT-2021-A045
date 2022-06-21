@@ -18,7 +18,7 @@ const NavUser = () => {
 
     const handleLogout = () => {
         dispatch( startLogout() );
-        document.location.reload(true);
+        window.location.reload();
     }
     
     if( uid ) {

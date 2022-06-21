@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2'
-import { firebase, googleAuthProvider } from "../../components/firebase/firebaseConfig";
+import { firebase, googleAuthProvider, facebookAuthProvider, twitterAuthProvider } from "../../components/firebase/firebaseConfig";
 
 import { startLoadingUser, startLogin, startLogout } from "./authSlices";
 
@@ -40,7 +40,30 @@ export const startGoogleLogin = () => {
 
         firebase.auth().signInWithPopup( googleAuthProvider )
             .then(({ user }) => {
-                dispatch( startLoadingUser( user.uid, user.displayName ) );
+                dispatch( startLogin( user.uid, user.displayName ) );
             });
     }
+}
+
+export const startLoginFacebook = () => {
+    return ( dispatch ) => {
+        startLoadingUser();
+
+        firebase.auth().signInWithPopup( facebookAuthProvider )
+            .then(({ user }) => {
+                dispatch( startLogin( user.uid, user.displayName ) );
+            });
+    }
+}
+
+export const startLoginTwitter = () => {
+    return ( dispatch ) => {
+        startLoadingUser();
+
+        firebase.auth().signInWithPopup( twitterAuthProvider )
+            .then(({ user }) => {
+                dispatch( startLogin( user.uid, user.displayName ) );
+            });
+    }
+    
 }

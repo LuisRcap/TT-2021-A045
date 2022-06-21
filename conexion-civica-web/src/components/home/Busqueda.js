@@ -1,13 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Busqueda = () => {
+  const logo = require.context('../../assets', true);
+
   return (
     <>
       <nav class="navbar navbar-light justify-content-between nav_buscar">
         <div className="container justify-content-center">
-          <a class="navbar-brand titulo">
-            <h1>Conexion Civica</h1>
-          </a>
+          <Link class="navbar-brand titulo" to='/'>
+            <img src={logo('./logoRecortadoSinFondo.png')} alt="logo" className="img-logo" />
+          </Link>
           <form class="form-inline buscar">
             <input
               class="form-control mr-sm-2"

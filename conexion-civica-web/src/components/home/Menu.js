@@ -2,12 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Menu = () => {
+  const logo = require.context('../../assets', true);
   return (
     <nav className="navbar navbar-inverse fixed-top" id="" role="navigation">
       <ul className="nav sidebar-nav">
         <div className="sidebar-header">
           <div className="sidebar-brand">
-            <Link to='/'>Conexion Civica</Link>
+            <Link to='/'>
+              <img src={logo('./logoRecortadoSinFondo.png')} alt="logo" className="img-logo" />
+            </Link>
           </div>
         </div>
         <li>

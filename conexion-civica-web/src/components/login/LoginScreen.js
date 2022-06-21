@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm } from "../../hooks/useForm";
-import { startLoginEmailPassword, startGoogleLogin } from "../../store/auth/thunks";
+import {
+  startLoginEmailPassword,
+  startGoogleLogin,
+  startLoginFacebook,
+  startLoginTwitter
+} from "../../store/auth/thunks";
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
@@ -29,6 +34,16 @@ const LoginScreen = () => {
   const handleGoogleLogin = (e) => {
     e.preventDefault();
     dispatch(startGoogleLogin(handleLoading));
+  };
+
+  const handleFacebookLogin = (e) => {
+    e.preventDefault();
+    dispatch(startLoginFacebook(handleLoading));
+  };
+
+  const handleTwitterLogin = (e) => {
+    e.preventDefault();
+    dispatch(startLoginTwitter(handleLoading));
   };
 
   return (
@@ -77,6 +92,33 @@ const LoginScreen = () => {
             </div>
             <p className="btn-text">
               <b>Iniciar con google</b>
+            </p>
+          </div>
+          {/* Facebook login */}
+          <div className="facebook-btn" onClick={handleFacebookLogin}>
+            <div className="facebook-icon-wrapper">
+              <img
+                className="facebook-icon"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/640px-Facebook_f_logo_%282019%29.svg.png"
+                alt="facebook button"
+              />
+            </div>
+            <p className="btn-text">
+              <b>Iniciar con facebook</b>
+            </p>
+          </div>
+
+          {/* Twitter login */}
+          <div className="twitter-btn" onClick={handleTwitterLogin}>
+            <div className="twitter-icon-wrapper">
+              <img
+                className="twitter-icon"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/640px-Twitter-logo.svg.png"
+                alt="twitter button"
+              />
+            </div>
+            <p className="btn-text">
+              <b>Iniciar con Twitter</b>
             </p>
           </div>
         </div>
