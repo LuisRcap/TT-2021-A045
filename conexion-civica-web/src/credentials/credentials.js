@@ -1,4 +1,4 @@
 export const credentials = {
-    googleMaps: "AIzaSyCYserX1vZz8elKG1rrxtauOvpbhJqjzkE",
+    googleMaps: "AIzaSyC8ZBd9fdyKUYILir6svmjXRjEp13Sx2nY",
     firebase: "AIzaSyCYserX1vZz8elKG1rrxtauOvpbhJqjzkE"
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MapGoogle from '../maps/MapGoogle';
 import FormNuevoReporte from './FormNuevoReporte';
 import Menu  from './Menu';
@@ -6,8 +6,11 @@ import NavUser from './NavUser';
 import { Busqueda } from './Busqueda';
 import { useLoadScript } from '@react-google-maps/api';
 import { credentials } from '../../credentials/credentials';
+import { getReportes } from '../../store/reports/thunks';
+import { useDispatch } from 'react-redux';
 
 const HomeScreen = () => {
+  const dispatch = useDispatch();
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -20,6 +23,10 @@ const HomeScreen = () => {
   const handleShowMenu = () => {
     setMenu( !Sidebar )
   }
+
+  useEffect(() => {
+    dispatch(getReportes())
+  }, [])
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: credentials.googleMapsApiKey,

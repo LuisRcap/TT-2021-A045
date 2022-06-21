@@ -158,3 +158,15 @@
         background: $button-active-blue;
     }
 }
+
+button#centrar-mapa {
+    font-size: 45px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: fixed;
+    border: 2px solid $secondary;
+    right: 16.5vw;
+    bottom: 20vh;
+    width: 70px;
+    height: 70px;
+}
